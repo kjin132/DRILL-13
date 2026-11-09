@@ -37,6 +37,9 @@ def handle_events():
         elif (event.type == SDL_KEYDOWN and event.key == SDLK_0 and
               item_mode.active):
             boy.clear_ball()
+        elif (event.type == SDL_KEYDOWN and event.key == SDLK_1 and
+              item_mode.active):
+            boy.select_ball(Ball.SMALL)
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.change_mode(title_mode)  # 2. quit 대신 title_mode로 전환
         else:
