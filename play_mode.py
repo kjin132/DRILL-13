@@ -24,7 +24,11 @@ def init():
 
 
 def finish():
+    global boy, grass, item_mode
     game_world.clear()
+    boy = None
+    grass = None
+    item_mode = None
 
 
 def handle_events():
