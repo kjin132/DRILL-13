@@ -53,6 +53,14 @@ class Boy:
         ball = Ball(self.x, self.y, self.face_dir * 10, self.ball_type)
         game_world.add_oject(ball)
 
+    def select_ball(self, ball_type):
+        if ball_type not in (Ball.SMALL, Ball.LARGE):
+            raise ValueError(f'Unsupported ball type: {ball_type}')
+        self.ball_type = ball_type
+
+    def clear_ball(self):
+        self.ball_type = None
+
     def handle_event(self, event):
         if (event.type == SDL_KEYDOWN and
                 event.key == SDLK_SPACE and
