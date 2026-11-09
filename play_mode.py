@@ -56,6 +56,7 @@ def update():
 def render():
     clear_canvas()
     game_world.render()
+    item_mode.draw()
     update_canvas()
 
 
