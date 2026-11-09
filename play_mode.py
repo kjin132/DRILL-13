@@ -1,5 +1,5 @@
 from pico2d import (clear_canvas, update_canvas, get_events, SDL_QUIT,
-                    SDL_KEYDOWN, SDLK_ESCAPE, SDLK_i, SDLK_0, SDLK_1)
+                    SDL_KEYDOWN, SDLK_ESCAPE, SDLK_i, SDLK_0, SDLK_1, SDLK_2)
 import game_framework
 import game_world
 import title_mode  # 1. title_mode 모듈 임포트
@@ -40,6 +40,9 @@ def handle_events():
         elif (event.type == SDL_KEYDOWN and event.key == SDLK_1 and
               item_mode.active):
             boy.select_ball(Ball.SMALL)
+        elif (event.type == SDL_KEYDOWN and event.key == SDLK_2 and
+              item_mode.active):
+            boy.select_ball(Ball.LARGE)
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.change_mode(title_mode)  # 2. quit 대신 title_mode로 전환
         else:
