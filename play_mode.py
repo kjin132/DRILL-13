@@ -1,5 +1,5 @@
 from pico2d import (clear_canvas, update_canvas, get_events, SDL_QUIT,
-                    SDL_KEYDOWN, SDLK_ESCAPE, SDLK_i, SDLK_0)
+                    SDL_KEYDOWN, SDLK_ESCAPE, SDLK_i, SDLK_0, SDLK_1)
 import game_framework
 import game_world
 import title_mode  # 1. title_mode 모듈 임포트
