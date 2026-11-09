@@ -1,21 +1,25 @@
-from pico2d import clear_canvas, update_canvas, get_events, SDL_QUIT, SDL_KEYDOWN, SDLK_ESCAPE
+from pico2d import (clear_canvas, update_canvas, get_events, SDL_QUIT,
+                    SDL_KEYDOWN, SDLK_ESCAPE, SDLK_i)
 import game_framework
 import game_world
 import title_mode  # 1. title_mode 모듈 임포트
 from grass import Grass
 from boy import Boy
+from item_mode import ItemMode
 
 boy = None
 grass = None
+item_mode = None
 
 
 def init():
-    global boy, grass
+    global boy, grass, item_mode
     grass = Grass()
     game_world.add_oject(grass, 0)
 
     boy = Boy()
     game_world.add_oject(boy, 1)
+    item_mode = ItemMode()
 
 
 def finish():
