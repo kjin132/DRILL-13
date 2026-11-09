@@ -18,7 +18,7 @@ class Boy:
         self.dir = 0
         self.face_dir = 1
         self.pressed_keys = set()
-        self.ball_type = None
+        self.ball_type = Ball.SMALL
 
         self.machine = Machine(
             model=self,
@@ -60,6 +60,12 @@ class Boy:
 
     def clear_ball(self):
         self.ball_type = None
+
+    def pause_movement(self):
+        self.pressed_keys.clear()
+        self.dir = 0
+        if self.state == 'RUN':
+            self.stop_run()
 
     def handle_event(self, event):
         if (event.type == SDL_KEYDOWN and

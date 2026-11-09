@@ -45,6 +45,10 @@ def handle_events():
             item_mode.toggle()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_p:
             paused = not paused
+            if paused:
+                boy.pause_movement()
+        elif paused:
+            continue
         elif (event.type == SDL_KEYDOWN and event.key == SDLK_0 and
               item_mode.active):
             boy.clear_ball()
